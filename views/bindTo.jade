@@ -1,0 +1,9 @@
+extends layout
+block content
+  h1= title
+  div#map
+  input#visible(type='checkbox', value='Toggle', checked='checked')
+  label(for='visible') Toggle Layer
+  
+  script(src="./javascripts/ol-debug.js")
+  script(src='./javascripts/2/bindTo.js') 

@@ -1,8 +1,55 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+/*
+  MAP CSS
+*/
+#map {
+  height: 500px;
+  width: 100%;
+  background-color: #b5d0d0;
+}
+.overlaystyle{
+  background-color: yellow; 
+  width: 20px;
+  height: 20px; 
+  border-radius: 10px
+}
+
+.myoverlay{
+  background-color: white; 
+  border-radius: 10px; 
+  border: 1px solid black; 
+  padding: 5px 10px;
+}
+
+#map_with_minimap {
+  height: 250px;
+  width: 100%;
+  background-color: #b5d0d0;
+}
+#minimap {
+  height: 250px;
+  width: 100%;
+  background-color: rgb(35.7%, 45.5%, 66.3%);
+}
+
+#map1 { 
+  height: 250px;
+  width: 50%;
+  background-color: rgb(35.7%, 45.5%, 66.3%);
+  float: left;
+}
+
+#map2 {
+  height: 250px;
+  width: 50%;
+  background-color: rgb(35.7%, 45.5%, 66.3%);
+  float: left;
 }

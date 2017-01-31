@@ -1,0 +1,11 @@
+extends layout
+block content
+  h1= title
+  div#map1
+  div#map2
+  input#visible(type='checkbox', value='Toggle', checked='checked')
+  label(for='visible') Toggle Layer
+  button(onclick='changeTarget();') Change Target
+  
+  script(src="../javascripts/ol-debug.js")
+  script(src='../javascripts/3/target_pratice.js') 
