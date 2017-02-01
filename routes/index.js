@@ -40,5 +40,11 @@ router.get('/4/bing', function(req, res){
 router.get('/4/zoomify', function(req, res){
   res.render('zoomify', { title: 'OpenLayers3 Zoomify' });
 });
+router.get('/4/mashup', function(req, res){
+  res.render('mashup', { title: 'OpenLayers3 Mashup' });
+});
+router.get('/4/image-static', function(req, res){
+  res.render('image_static', { title: 'OpenLayers3 Image' });
+});
 
 module.exports = router;

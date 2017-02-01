@@ -1,0 +1,2 @@
+Try the layerSwitcher external API for OpenLayers
+https://github.com/walkermatt/ol3-layerswitcher
