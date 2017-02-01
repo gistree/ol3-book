@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'OpenLayers3' });
 });
@@ -22,6 +21,24 @@ router.get('/3/create_map', function(req, res){
 });
 router.get('/3/target', function(req, res){
   res.render('target', { title: 'OpenLayers3 Target Pratice' });
+});
+router.get('/3/animations', function(req, res){
+  res.render('animations', { title: 'OpenLayers3 Animations' });
+});
+router.get('/3/link_views', function(req, res){
+  res.render('link_views', { title: 'OpenLayers3 Link Views' });
+});
+router.get('/4/layer', function(req, res){
+  res.render('change_layer_properties', { title: 'OpenLayers3 Change Layer Properties' });
+});
+router.get('/4/mapquest', function(req, res){
+  res.render('mapquest', { title: 'OpenLayers3 MapQuest' });
+});
+router.get('/4/bing', function(req, res){
+  res.render('bing', { title: 'OpenLayers3 Bing' });
+});
+router.get('/4/zoomify', function(req, res){
+  res.render('zoomify', { title: 'OpenLayers3 Zoomify' });
 });
 
 module.exports = router;

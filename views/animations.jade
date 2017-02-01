@@ -1,0 +1,13 @@
+extends layout
+block content
+  h1= title
+  div#map
+  button(onclick='doBounce(london);') Bounce To London
+  button(onclick='doBounce(rome);') Bounce To Rome
+  button(onclick='doPan(london);') Pan To London
+  button(onclick='doPan(rome);') Pan To Rome
+  button(onclick='doRotate();') Rotate
+  button(onclick='doZoom(2);') Zoom Out
+  button(onclick='doZoom(0.5);') Zoom In
+  script(src="../javascripts/ol-debug.js")
+  script(src='../javascripts/3/animations.js') 
