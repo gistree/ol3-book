@@ -46,5 +46,8 @@ router.get('/4/mashup', function(req, res){
 router.get('/4/image-static', function(req, res){
   res.render('image_static', { title: 'OpenLayers3 Image' });
 });
+router.get('/5/vector', function(req, res){
+  res.render('vector', { title: 'OpenLayers3 Vector' });
+});
 
 module.exports = router;
