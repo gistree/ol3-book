@@ -7,25 +7,28 @@ a {
   color: #00B7FF;
 }
 
+
 /*
   MAP CSS
 */
+
 #map {
   height: 500px;
   width: 100%;
   background-color: #b5d0d0;
 }
-.overlaystyle{
-  background-color: yellow; 
+
+.overlaystyle {
+  background-color: yellow;
   width: 20px;
-  height: 20px; 
+  height: 20px;
   border-radius: 10px
 }
 
-.myoverlay{
-  background-color: white; 
-  border-radius: 10px; 
-  border: 1px solid black; 
+.myoverlay {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid black;
   padding: 5px 10px;
 }
 
@@ -34,13 +37,14 @@ a {
   width: 100%;
   background-color: #b5d0d0;
 }
+
 #minimap {
   height: 250px;
   width: 100%;
   background-color: rgb(35.7%, 45.5%, 66.3%);
 }
 
-#map1 { 
+#map1 {
   height: 250px;
   width: 50%;
   background-color: rgb(35.7%, 45.5%, 66.3%);
@@ -52,4 +56,80 @@ a {
   width: 50%;
   background-color: rgb(35.7%, 45.5%, 66.3%);
   float: left;
+}
+
+#popup {
+  background-color: red;
+}
+
+.my_drag_box {
+  border: 2px dashed #fff;
+  background-color: rgba(35.7%, 45.5%, 66.3%, 0.65);
+}
+
+#myposition>.ol-mouse-position {
+  position: relative;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.my-scale-line {
+    position: absolute;
+    padding: 2px
+}
+
+.my-scale-line {
+  background: rgba(10, 190, 45, .4);
+  border-radius: 4px;
+  bottom: 8px;
+  left: 8px
+}
+
+.my-scale-line-inner {
+    border: 1px solid #eee;
+    border-top: none;
+    color: #eee;
+    font-size: 10px;
+    text-align: center;
+    margin: 1px;
+    will-change: contents, width
+}
+
+.export-geojson {
+  position: absolute;
+  top: 65px;
+  left: 8px;
+  background: rgba(255,255,255,0.4);
+  border-radius: 4px;
+  padding: 2px;
+}
+
+.ol-touch .export-geojson {
+  top: 80px;
+}
+
+.export-geojson a {
+  display: block;
+  color: white;
+  font-size: 16px;
+  font-family: 'Lucida Grande',Verdana,Geneva,Lucida,Arial,Helvetica,sans-serif;
+  font-weight: bold;
+  margin: 1px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 2px;
+  height: 22px;
+  width: 22px;
+  background: rgba(0,60,136,0.5);
+}
+
+.ol-touch .export-geojson a {
+  font-size: 20px;
+  height: 30px;
+  width: 30px;
+  line-height: 26px;
+}
+
+.export-geojson a:hover {
+  background: rgba(0,60,136,0.7);
 }

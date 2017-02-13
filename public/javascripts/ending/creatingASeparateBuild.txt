@@ -1,0 +1,110 @@
+1.	 Create a copy of flickr_combined.js and call it flickr_separate.js . As
+always, you may use a different name but make sure it is consistent! You might also
+want to make a copy of your HTML file and use it for the rest of this example.
+
+2.	 Edit flickr_separate.js and remove all the goog.require statements from
+the beginning of the file.
+
+3.	 Add a new <script> tag to load flickr_separate.js after the <script> tag
+that loads the combined build file:
+<script src="flickr_separate.js"></script>
+
+4.	
+Now, we need to create our custom build of OpenLayers. First, we'll need a
+configuration file. Let's create a new file named flickr_separate.json in the
+OpenLayers build directory. Give it the following content:
+{
+    "exports": [
+        "ol.Map",
+        "ol.Map#*",
+        "ol.View",
+        "ol.animation.*",
+        "ol.control.*",
+        "ol.layer.Tile",
+        "ol.proj.*",
+        "ol.source.OSM",
+        "ol.source.Vector",
+        "ol.source.Vector#getFeatures",
+        "ol.source.Vector#addFeature",
+        "ol.source.Vector#removeFeature",
+        "ol.layer.Vector",
+        "ol.interaction.Select",
+        "ol.interaction.Select#getFeatures",
+        "ol.interaction.Select#on",
+        "ol.Observable#on",
+        "ol.Feature",
+        "ol.Feature#get",
+        "ol.Feature#set",
+        "ol.geom.Point",
+        "ol.style.Style",
+        "ol.style.Fill","ol.style.Stroke",
+        "ol.style.Circle",
+        "ol.style.Text",
+        "ol.style.Icon"
+    ],
+    "src": ["src/**/*.js"],
+    "compile": {
+        "externs": [
+            "externs/bingmaps.js",
+            "externs/bootstrap.js",
+            "externs/closure-compiler.js",
+            "externs/example.js",
+            "externs/geojson.js",
+            "externs/jquery-1.7.js",
+            "externs/oli.js",
+            "externs/olx.js",
+            "externs/proj4js.js",
+            "externs/tilejson.js",
+            "externs/topojson.js",
+            "externs/vbarray.js"
+            ],
+        "define": [
+            "goog.dom.ASSUME_STANDARDS_MODE=true",
+            "goog.DEBUG=false"
+        ],
+        "jscomp_error": [
+            "accessControls",
+            "ambiguousFunctionDecl",
+            "checkEventfulObjectDisposal",
+            "checkRegExp",
+            "checkStructDictInheritance",
+            "checkTypes",
+            "checkVars",
+            "const",
+            "constantProperty",
+            "deprecated",
+            "duplicateMessage",
+            "es3",
+            "externsValidation",
+            "fileoverviewTags",
+            "globalThis",
+            "internetExplorerChecks",
+            "invalidCasts",
+            "misplacedTypeAnnotation","missingGetCssName",
+            "missingProperties",
+            "missingProvide",
+            "missingRequire",
+            "missingReturn",
+            "newCheckTypes",
+            "nonStandardJsDocs",
+            "suspiciousCode",
+            "strictModuleDepCheck",
+            "typeInvalidation",
+            "undefinedNames",
+            "undefinedVars",
+            "unknownDefines",
+            "uselessCode",
+            "visibility"
+        ],
+        "extra_annotation_name": [
+            "api", "observable"
+        ],
+        "jscomp_off": [
+            "es5Strict"
+        ],
+        "compilation_level": "ADVANCED",
+        "output_wrapper": "// OpenLayers 3. See http://ol3.js.org/\n(function(){%output%})();",
+        "use_types_for_optimization": true,
+        "manage_closure_dependencies": true
+    }
+}

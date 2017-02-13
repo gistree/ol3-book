@@ -1,0 +1,14 @@
+extends layout
+block content
+  h1= title
+  div#map
+  form.form-inline
+    label Geometry Type &nbsp;
+    select#type
+      option(value="Point") Point
+      option(value="Polygon") Polygon 
+      option(value="LineString") LineString 
+
+  script(src="../javascripts/ol-debug.js")
+  script(src="//code.jquery.com/jquery-1.11.0.min.js")
+  script(src='../javascripts/8/createNewContent.js') 

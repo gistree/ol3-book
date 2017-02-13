@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
 
 router.get('/', function (req, res, next) {
   res.render('index', {
@@ -149,6 +150,141 @@ router.get('/6/propertyStyling', function (req, res) {
 router.get('/6/overlay', function (req, res) {
   res.render('overlay_style', {
     title: 'OpenLayers3 Overlay Styling'
+  });
+});
+router.get('/7/projection', function (req, res) {
+  res.render('projections', {
+    title: 'OpenLayers3 Projections'
+  });
+});
+router.get('/7/proj4js', function (req, res) {
+  res.render('proj4js', {
+    title: 'OpenLayers3 proj4js'
+  });
+});
+router.get('/7/rasterProj', function (req, res) {
+  res.render('rasterProj', {
+    title: 'OpenLayers3 Raster Projection'
+  });
+});
+router.get('/7/vectorProj', function (req, res) {
+  res.render('vectorProj', {
+    title: 'OpenLayers3 Vector Projection'
+  });
+});
+router.get('/8/simpleSelect', function (req, res) {
+  res.render('8_simple_select', {
+    title: 'OpenLayers3 Simple Select'
+  });
+});
+router.get('/8/moreSelect', function (req, res) {
+  res.render('8_more_select', {
+    title: 'OpenLayers3 More Options for Select'
+  });
+});
+router.get('/8/featureInfo', function (req, res) {
+  res.render('8_feature_info', {
+    title: 'OpenLayers3 Getting Feature Information'
+  });
+});
+router.get('/8/featureInfoURL', function (req, res) {
+  res.render('8_feature_info_url', {
+    title: 'OpenLayers3 Getting Feature Information WMS URL'
+  });
+});
+router.get('/8/simpleOverlay', function (req, res) {
+  res.render('8_simple_overlay', {
+    title: 'OpenLayers3 Simple Overlay'
+  });
+});
+router.get('/8/dynamicOverlay', function (req, res) {
+  res.render('8_dynamic_overlay', {
+    title: 'OpenLayers3 Dynamic Overlay'
+  });
+});
+router.get('/8/createNew', function (req, res) {
+  res.render('8_create_new', {
+    title: 'OpenLayers3 Create new Content'
+  });
+});
+router.get('/features.geojson', function (request, response) {
+  response.contentType('application/json');
+  fs.readFile('public/assets/geojson/features.json', function (err, data) {
+    console.log(data);
+    response.send(data.toString());
+  });
+});
+router.post('/features.geojson', function (req, resp) {
+  resp.contentType('application/json');
+  var path = '/home/jokord/Projects/pdm-vila-real/pdm-vilareal-dev/public/assets/geojson/features.json';
+  var json = JSON.stringify(req.body, function (k, v) {
+    if (typeof v == 'string') {
+      var f = parseFloat(v);
+      return !isNaN(f) ? f : v;
+    }
+    return v;
+  });
+
+  fs.writeFile(path, json, function (err) {
+    var msgOk = 'The file was saved!';
+    var msgFail = 'The file was saved!';
+    if (err) {
+      console.log(err);
+      resp.send(msgFail);
+    } else {
+      console.log(msgOk);
+      resp.send(msgOk);
+    }
+  });
+});
+router.get('/8/modifyFeatures', function (req, res) {
+  res.render('8_modify_features', {
+    title: 'OpenLayers3 Modify Features'
+  });
+});
+router.get('/8/defaultInteractions', function (req, res) {
+  res.render('8_default_interactions', {
+    title: 'OpenLayers3 Default Interactions'
+  });
+});
+router.get('/8/dragrotatezoom', function (req, res) {
+  res.render('8_drag_rotate_zoom', {
+    title: 'OpenLayers3 DragRotateAndZoom (Shift Key)'
+  });
+});
+router.get('/8/dragbox', function (req, res) {
+  res.render('8_drag_box', {
+    title: 'OpenLayers3 DragBox'
+  });
+});
+router.get('/9/defaultControls', function (req, res) {
+  res.render('9_default_controls', {
+    title: 'OpenLayers3 Default Controls'
+  });
+});
+router.get('/9/defaultAttributions', function (req, res) {
+  res.render('9_default_attributions', {
+    title: 'OpenLayers3 Default Attributions'
+  });
+});
+router.get('/9/mousePosition', function (req, res) {
+  res.render('9_finding_mouse_pos', {
+    title: 'OpenLayers3 Mouse Position'
+  });
+});
+router.get('/9/scale', function (req, res) {
+  res.render('9_scale_line', {
+    title: 'OpenLayers3 Scale Line'
+  });
+});
+router.get('/9/zoom_extent', function (req, res) {
+  res.render('9_zoom_to_extent', {
+    title: 'OpenLayers3 Zoom Extent'
+  });
+});
+router.get('/9/custom_control', function (req, res) {
+  res.render('9_custom_control', {
+    title: 'OpenLayers3 Custom Control'
   });
 });
 
